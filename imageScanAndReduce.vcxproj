@@ -140,7 +140,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Brightness.cpp" />
+    <ClCompile Include="Eroding_And_Dilating.cpp" />
+    <ClCompile Include="Filter2D.cpp" />
     <ClCompile Include="imageScanAndReduce.cpp" />
+    <ClCompile Include="mat_mask_operations.cpp" />
+    <ClCompile Include="Morphology_Transformations.cpp" />
+    <ClCompile Include="Smoothing_Images.cpp" />
+    <ClCompile Include="Smoothing_Images2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

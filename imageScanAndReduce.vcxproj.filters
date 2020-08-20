@@ -18,5 +18,26 @@
     <ClCompile Include="imageScanAndReduce.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="mat_mask_operations.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Brightness.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Smoothing_Images.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Eroding_And_Dilating.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Smoothing_Images2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Morphology_Transformations.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

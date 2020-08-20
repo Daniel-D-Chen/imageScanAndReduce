@@ -10,7 +10,7 @@ using namespace std;
 
 Mat& ScanImageAndReduceC(Mat& srcImage, String imgName, const uchar* const table);
 
-int main(int argc, char* argv[]) {
+/*int main(int argc, char* argv[]) {
 	String imageName = "garden.jpg";
 	String imagePath = "Resource/" + imageName;
 	Mat image;
@@ -33,14 +33,15 @@ int main(int argc, char* argv[]) {
 
 	waitKey(0);
 	return 0;
-}
+}*/
 
 Mat& ScanImageAndReduceC(Mat& srcImage, String imgName, const uchar* const table) {
 	Mat imageClone = srcImage.clone();
 	int nRows = imageClone.rows;
 	int nColumns = imageClone.cols;
 	int channels = imageClone.channels();
-	switch (channels) {
+
+	/*switch (channels) {
 	case 1: { //µ¥Í¨µÀ
 		MatIterator_<uchar> it, end;
 		for (it = imageClone.begin<uchar>(), end = imageClone.end<uchar>(); it != end; it++) {
@@ -55,7 +56,8 @@ Mat& ScanImageAndReduceC(Mat& srcImage, String imgName, const uchar* const table
 			(*it)[2] = table[(*it)[2]];
 		}
 	}
-	}
+	}*/
+
 	/*uchar* p;
 	for (int i = 0; i < nRows; i++) {
 		p = imageClone.ptr(i);
@@ -63,6 +65,14 @@ Mat& ScanImageAndReduceC(Mat& srcImage, String imgName, const uchar* const table
 			p[j] = table[p[j]];
 		}
 	}*/
+
+	for (int y = 0; y < nRows; y++) {
+		for (int x = 0; x < nColumns; x++) {
+			for (int c = 0; c < channels; c++) {
+				imageClone.at<Vec3b>(y, x)[c] = saturate_cast<uchar>(table[imageClone.at<Vec3b>(y,x)[c]]);
+			}
+		}
+	}
 
 	imwrite("./images/clone_" + imgName, imageClone);
 	namedWindow("clone_" + imgName, WINDOW_AUTOSIZE);
